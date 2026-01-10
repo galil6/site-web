@@ -1,42 +1,38 @@
-<?php
-  /**
-  * Requires the "PHP Email Form" library
-  * The "PHP Email Form" library is available only in the pro version of the template
-  * The library should be uploaded to: vendor/php-email-form/php-email-form.php
-  * For more info and help: https://bootstrapmade.com/php-email-form/
-  */
-
-  // Replace contact@example.com with your real receiving email address
-  $receiving_email_address = 'galilee_mugenzikayumba@ens.univ-artois.fr';
-
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
-
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
+<script>
+  const form = document.getElementById('contact-form');
   
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+  form.addEventListener('submit', async function(event) {
+    event.preventDefault(); // Empêche le rechargement de la page
+    
+    const loading = document.querySelector('.loading');
+    const errorMsg = document.querySelector('.error-message');
+    const sentMsg = document.querySelector('.sent-message');
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
+    loading.style.display = 'block';
+    errorMsg.style.display = 'none';
+    sentMsg.style.display = 'none';
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  isset($_POST['phone']) && $contact->add_message($_POST['phone'], 'Phone');
-  $contact->add_message( $_POST['message'], 'Message', 10);
+    const formData = new FormData(form);
 
-  echo $contact->send();
-?>
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      loading.style.display = 'none';
+      if (response.ok) {
+        sentMsg.style.display = 'block'; // Affiche le message de succès défini dans votre HTML
+        form.reset();
+      } else {
+        errorMsg.textContent = "Erreur lors de l'envoi. Veuillez réessayer.";
+        errorMsg.style.display = 'block';
+      }
+    } catch (error) {
+      loading.style.display = 'none';
+      errorMsg.textContent = "Impossible de contacter le serveur.";
+      errorMsg.style.display = 'block';
+    }
+  });
+</script>
