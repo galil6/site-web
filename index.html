@@ -452,45 +452,31 @@
               </div>
 
               <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-                <form action="https://formspree.io/f/https://formspree.io/f/xqeezebq" method="POST" id="contact-form" class="php-email-form system-message-box p-4">
-                 
+               <form action="https://formspree.io/f/https://formspree.io/f/xqeezebq" method="POST" id="contact-form" class="system-message-box p-4" style="border: 1px solid var(--accent-color);">
+  <div class="row gy-4">
+    <div class="col-md-6">
+      <input type="text" name="name" class="form-control bg-transparent text-white border-secondary" placeholder="Votre Nom" required style="border-radius: 0;">
+    </div>
+    <div class="col-md-6">
+      <input type="email" name="email" class="form-control bg-transparent text-white border-secondary" placeholder="Votre Email" required style="border-radius: 0;">
+    </div>
+    <div class="col-md-12">
+      <input type="text" name="subject" class="form-control bg-transparent text-white border-secondary" placeholder="Objet" required style="border-radius: 0;">
+    </div>
+    <div class="col-md-12">
+      <textarea name="message" class="form-control bg-transparent text-white border-secondary" rows="6" placeholder="Message" required style="border-radius: 0;"></textarea>
+    </div>
+    <div class="col-md-12 text-center">
+      <div id="form-loading" style="display:none; color: var(--accent-color);">[ ENVOI EN COURS... ]</div>
+      <div id="form-error" style="display:none; color: #ff4444; border: 1px solid #ff4444; padding: 10px; margin-bottom: 10px;"></div>
+      <div id="form-success" style="display:none; color: #00ff00; border: 1px solid #00ff00; padding: 10px; margin-bottom: 10px;">MESSAGE ENVOYÉ AVEC SUCCÈS !</div>
 
-                  <div class="row gy-4">
-
-
-                    <div class="col-md-6">
-                      <input type="text" name="name" class="form-control bg-transparent text-white border-secondary"
-                        placeholder="Votre Nom" required style="border-radius: 0;">
-                    </div>
-
-                    <div class="col-md-6">
-                      <input type="email" class="form-control bg-transparent text-white border-secondary" name="email"
-                        placeholder="Votre Email" required style="border-radius: 0;">
-                    </div>
-
-                    <div class="col-md-12">
-                      <input type="text" class="form-control bg-transparent text-white border-secondary" name="subject"
-                        placeholder="Objet" required style="border-radius: 0;">
-                    </div>
-
-                    <div class="col-md-12">
-                      <textarea class="form-control bg-transparent text-white border-secondary" name="message" rows="6"
-                        placeholder="Message" required style="border-radius: 0;"></textarea>
-                    </div>
-
-                    <div class="col-md-12 text-center">
-                      <div class="loading sys-output">Envoi en cours...</div>
-                      <div class="error-message sys-output text-danger"></div>
-                      <div class="sent-message sys-success">Votre message a été envoyé. Merci !</div>
-
-                      <button type="submit" class="btn-getstarted mt-3 w-100"
-                        style="background: var(--accent-color); color: black; font-weight: bold; border: none; padding: 10px;">
-                        <i class="bi bi-terminal"></i> ENVOI(E)_MESSAGE
-                      </button>
-                    </div>
-
-                  </div>
-                </form>
+      <button type="submit" id="submit-button" class="btn-getstarted mt-3 w-100" style="background: var(--accent-color); color: black; font-weight: bold; border: none; padding: 10px;">
+        <i class="bi bi-terminal"></i> ENVOI(E)_MESSAGE
+      </button>
+    </div>
+  </div>
+</form>
               </div>
             </div>
           </div>
@@ -647,7 +633,54 @@
           "retina_detect": true
         });
       </script>
+<script>
+  const contactForm = document.getElementById('contact-form');
+  const loadingDiv = document.getElementById('form-loading');
+  const errorDiv = document.getElementById('form-error');
+  const successDiv = document.getElementById('form-success');
+  const submitBtn = document.getElementById('submit-button');
 
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    // Reset de l'interface
+    loadingDiv.style.display = 'block';
+    errorDiv.style.display = 'none';
+    successDiv.style.display = 'none';
+    submitBtn.disabled = true;
+
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        loadingDiv.style.display = 'none';
+        successDiv.style.display = 'block';
+        contactForm.reset();
+      } else {
+        const data = await response.json();
+        loadingDiv.style.display = 'none';
+        errorDiv.textContent = data.errors ? data.errors[0].message : "Erreur lors de l'envoi.";
+        errorDiv.style.display = 'block';
+      }
+    } catch (error) {
+      // C'est ici qu'on gère le "Failed to fetch"
+      loadingDiv.style.display = 'none';
+      errorDiv.textContent = "Erreur réseau : Vérifiez votre connexion ou vos bloqueurs de publicité.";
+      errorDiv.style.display = 'block';
+      console.error("Détails de l'erreur:", error);
+    } finally {
+      submitBtn.disabled = false;
+    }
+  });
+</script>
   </body>
 
 </body>
