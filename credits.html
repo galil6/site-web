@@ -12,6 +12,93 @@
     h1, h2 { color: #00d2ff; font-family: 'Raleway', sans-serif; }
     p, li { line-height: 1.6; font-family: 'Roboto', sans-serif; }
     .source-tag { color: #00d2ff; font-weight: bold; }
+    /* --- Style Global Mentions Légales --- */
+.legal-body {
+  background-color: #040b14; /* Fond sombre identique à ton index */
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.6;
+}
+
+.legal-container {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px); /* Effet de flou moderne */
+  padding: 40px;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 210, 255, 0.3); /* Bordure bleue subtile */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Titres --- */
+.legal-container h1 {
+  color: #00d2ff; /* Ton bleu d'accentuation */
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.legal-container h2 {
+  color: #00d2ff;
+  font-size: 1.5rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-left: 3px solid #00d2ff; /* Barre décorative à gauche */
+  padding-left: 15px;
+}
+
+/* --- Listes et Liens --- */
+.legal-container ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.legal-container li {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.source-tag {
+  color: #00d2ff;
+  font-weight: bold;
+  margin-right: 10px;
+  font-family: monospace;
+}
+
+.legal-container a {
+  color: #00d2ff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.legal-container a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 10px #00d2ff;
+}
+
+/* --- Bouton Retour --- */
+.btn-back {
+  display: inline-block;
+  padding: 10px 30px;
+  margin-top: 30px;
+  border: 2px solid #00d2ff;
+  color: #00d2ff;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.4s;
+  border-radius: 5px;
+}
+
+.btn-back:hover {
+  background: #00d2ff;
+  color: #000;
+  box-shadow: 0 0 20px #00d2ff;
+}
   </style>
 </head>
 <body>
@@ -56,3 +143,4 @@
   </div>
 </body>
 </html>
+
