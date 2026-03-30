@@ -1,0 +1,71 @@
+<section id="reflexion" class="reflexion-container">
+    <div class="content-wrapper">
+        <header class="section-header">
+            <h1>Mon Écrit Réflexif</h1>
+            <p class="subtitle">Parcours en BUT Réseaux et Télécommunications</p>
+        </header>
+
+        <article class="card">
+            <div class="card-icon">🎯</div>
+            <div class="card-text">
+                <h3>Choix d'orientation</h3>
+                <p>Passionné par la communication entre objets électroniques, j'étais convaincu que seul le <strong>BUT RT</strong> pourrait répondre à mes interrogations.</p>
+            </div>
+        </article>
+
+        <div class="grid-2">
+            <article class="card">
+                <h3>Mes Motivations</h3>
+                <p>Ce qui me passionne, c'est l'administration de systèmes : j'aime l'idée d'être le responsable d'un écosystème complexe.</p>
+            </article>
+            <article class="card">
+                <h3>Mes Ambitions</h3>
+                <p>Rechercher une alternance de deux ans en tant qu'<strong>Apprenti Administrateur Systèmes et Réseaux</strong> pour devenir le pilier technique d'une équipe.</p>
+            </article>
+        </div>
+
+        <article class="card highlight">
+            <h3>Bilan du Premier Semestre</h3>
+            <p>Ce semestre a marqué ma transition de la théorie vers la pratique, m'apprenant à délaisser le "bidouillage" pour une méthode de travail rigoureuse.</p>
+            
+            <div class="skills-list">
+                <div class="skill-item"><strong>Réseaux :</strong> Maîtrise de l'adressage IP, des switchs et des routeurs.</div>
+                <div class="skill-item"><strong>Linux :</strong> Aisance avec la ligne de commande pour la gestion de serveurs.</div>
+                <div class="skill-item"><strong>Systèmes :</strong> Installation propre, gestion des utilisateurs et sécurisation (Win/Linux).</div>
+                <div class="skill-item"><strong>Dépannage :</strong> Développement de la patience et d'une logique d'analyse d'erreurs.</div>
+            </div>
+        </article>
+
+        <footer class="reflexion-footer">
+            <p><em>"Je ne me contente plus de suivre un tuto, je comprends ce que je fais."</em></p>
+        </footer>
+    </div>
+</section>
+
+<style>
+/* Styles personnalisés pour correspondre à un portfolio GitHub moderne */
+.reflexion-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+.section-header { text-align: center; margin-bottom: 40px; }
+.card {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #007bff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.highlight { border-left: 5px solid #28a745; background: #fff; }
+.skills-list { margin-top: 15px; }
+.skill-item { margin-bottom: 8px; padding-left: 20px; position: relative; }
+.skill-item::before { content: "✔"; position: absolute; left: 0; color: #28a745; }
+.reflexion-footer { text-align: center; margin-top: 30px; font-size: 1.1em; color: #555; }
+@media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+</style>
