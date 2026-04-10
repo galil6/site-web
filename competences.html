@@ -3,210 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compétences & ACs</title>
+    <title>Compétences - BUT Réseaux & Télécoms</title>
     <style>
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e67e22;
-            --bg: #f4f7f6;
-            --white: #ffffff;
-            --text: #333;
+            --admin-color: #2980b9;
+            --connect-color: #27ae60;
+            --program-color: #8e44ad;
+            --bg-light: #f8f9fa;
+            --text-main: #2c3e50;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
+            background-color: #f0f2f5;
+            color: var(--text-main);
+            line-height: 1.6;
             margin: 0;
-            padding: 0;
+            padding: 20px;
         }
 
-        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-        
-        h1 { text-align: center; color: var(--primary); margin-bottom: 50px; }
+        .container { max-width: 1100px; margin: 0 auto; }
 
-        /* Style des Blocs de Compétences (BC) */
-        .bc-section {
-            background: var(--white);
-            border-radius: 12px;
-            margin-bottom: 60px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        h1 { text-align: center; color: var(--text-main); margin-bottom: 40px; }
+
+        /* Style des Blocs de Compétences */
+        .bc-card {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             overflow: hidden;
-            border-top: 6px solid var(--secondary);
+            border-top: 8px solid;
         }
 
-        .bc-header {
-            background: var(--primary);
-            color: white;
-            padding: 25px;
-        }
+        .bc-admin { border-top-color: var(--admin-color); }
+        .bc-connect { border-top-color: var(--connect-color); }
+        .bc-program { border-top-color: var(--program-color); }
 
-        .bc-header h2 { margin: 0; font-size: 1.8rem; }
+        .bc-header { padding: 20px 30px; background: #fff; border-bottom: 1px solid #eee; }
+        .bc-header h2 { margin: 0; font-size: 1.6rem; }
 
-        /* Style des Apprentissages Critiques (AC) */
-        .ac-block {
-            padding: 30px;
-            border-bottom: 1px solid #eee;
-        }
+        /* Apprentissages Critiques (AC) */
+        .ac-section { padding: 30px; border-bottom: 1px solid #f0f0f0; }
+        .ac-section:last-child { border-bottom: none; }
 
-        .ac-block:last-child { border-bottom: none; }
-
-        .ac-title {
-            color: var(--secondary);
-            font-size: 1.4rem;
+        .ac-title { 
+            display: flex; 
+            align-items: center; 
             margin-bottom: 20px;
-            display: flex;
-            align-items: center;
+            font-weight: bold;
+            font-size: 1.2rem;
         }
 
-        .ac-title span {
-            background: var(--secondary);
-            color: white;
-            padding: 4px 12px;
+        .ac-badge {
+            background: #eee;
+            padding: 5px 12px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             margin-right: 15px;
+            color: #555;
         }
 
-        /* Structure d'explication interne */
-        .explanation-grid {
+        /* Grille d'explication : Quoi, Comment, Pourquoi */
+        .method-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
 
-        .exp-item {
-            background: #fdfdfd;
-            padding: 15px;
-            border-radius: 8px;
-            border: 1px solid #f0f0f0;
+        .method-box {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #eef0f2;
         }
 
-        .exp-item h4 {
-            margin-top: 0;
-            color: var(--accent);
+        .method-box h4 {
+            margin: 0 0 10px 0;
             text-transform: uppercase;
-            font-size: 0.85rem;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: #7f8c8d;
         }
 
-        .exp-item p { font-size: 0.95rem; margin-bottom: 0; }
+        .method-box p { margin: 0; font-size: 0.95rem; }
 
+        .evidence-link {
+            margin-top: 15px;
+            display: inline-block;
+            font-size: 0.9rem;
+            color: var(--admin-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) { .method-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Mon Portefeuille de Compétences</h1>
+    <h1>Référentiel de Compétences</h1>
 
-    <section class="bc-section" style="border-top-color: #2980b9;">
-        <div class="bc-header">
-            <h2>BC1 - Administrer les réseaux et l'Internet</h2>
+    <section class="bc-card bc-admin">
+        <div class="bc-header"><h2>BC1 - Administrer les réseaux et l'Internet</h2></div>
+        
+        <div class="ac-section">
+            <div class="ac-title"><span class="ac-badge">AC 11.03</span> Configurer les fonctions de base du réseau local</div>
+            <div class="method-grid">
+                <div class="method-box">
+                    <h4>Quoi ?</h4>
+                    <p>Mise en place de l'adressage IP, configuration de switchs et de routeurs pour faire communiquer des machines[cite: 13, 14].</p>
+                </div>
+                <div class="method-box">
+                    <h4>Comment ?</h4>
+                    <p>En utilisant des équipements réels en TP, j'ai appris à travailler avec méthode plutôt que de "bidouiller"[cite: 10, 11].</p>
+                </div>
+                <div class="method-box">
+                    <h4>Pourquoi ?</h4>
+                    <p>Pour assurer une communication logique et fluide entre tous les éléments d'un système informatique[cite: 3].</p>
+                </div>
+            </div>
+            <a href="#" class="evidence-link">📄 Voir le compte-rendu de TP (PDF)</a>
         </div>
 
-        <article class="ac-block">
-            <h3 class="ac-title"><span>AC 1.1</span> Maîtrise des fondamentaux (Électricité/Réseau)</h3>
-            <div class="explanation-grid">
-                <div class="exp-item">
+        <div class="ac-section">
+            <div class="ac-title"><span class="ac-badge">AC 11.04</span> Maîtriser les systèmes d’exploitation (Linux/Windows)</div>
+            <div class="method-grid">
+                <div class="method-box">
                     <h4>Quoi ?</h4>
-                    <p>Compréhension des signaux électriques et des couches physiques du réseau.</p>
+                    <p>Installation propre de systèmes, gestion des utilisateurs et sécurisation des accès de base[cite: 19].</p>
                 </div>
-                <div class="exp-item">
+                <div class="method-box">
                     <h4>Comment ?</h4>
-                    <p>Utilisation d'oscilloscopes en TP et calculs de puissance/tension sur des équipements de com.</p>
+                    <p>Via l'utilisation intensive de la ligne de commande Linux pour gérer des serveurs et des fichiers[cite: 18].</p>
                 </div>
-                <div class="exp-item">
+                <div class="method-box">
                     <h4>Pourquoi ?</h4>
-                    <p>Pour être capable de diagnostiquer une panne matérielle avant de chercher une erreur logicielle.</p>
+                    <p>Pour devenir l'administrateur responsable d'un système sur lequel l'équipe peut compter[cite: 5, 7].</p>
                 </div>
             </div>
-        </article>
-
-        <article class="ac-block">
-            <h3 class="ac-title"><span>AC 1.2</span> Architecture & Codage</h3>
-            <div class="explanation-grid">
-                <div class="exp-item">
-                    <h4>Quoi ?</h4>
-                    <p>Apprentissage du binaire, de l'hexadécimal et du modèle OSI.</p>
-                </div>
-                <div class="exp-item">
-                    <h4>Comment ?</h4>
-                    <p>Exercices de conversion et analyse de trames avec Wireshark.</p>
-                </div>
-                <div class="exp-item">
-                    <h4>Pourquoi ?</h4>
-                    <p>Comprendre comment l'information est encapsulée pour circuler sur Internet.</p>
-                </div>
-            </div>
-        </article>
+        </div>
     </section>
 
-    <section class="bc-section" style="border-top-color: #27ae60;">
-        <div class="bc-header">
-            <h2>BC2 - Connecter les entreprises et les usagers</h2>
+    <section class="bc-card bc-connect">
+        <div class="bc-header"><h2>BC2 - Connecter les entreprises et les usagers</h2></div>
+        
+        <div class="ac-section">
+            <div class="ac-title"><span class="ac-badge">AC 12.01</span> Mesurer et analyser les signaux</div>
+            <div class="method-grid">
+                <div class="method-box">
+                    <h4>Quoi ?</h4>
+                    <p>Étude de la transmission des données sur différents supports physiques.</p>
+                </div>
+                <div class="method-box">
+                    <h4>Comment ?</h4>
+                    <p>Utilisation d'outils de mesure pour vérifier la qualité des signaux et identifier les erreurs.</p>
+                </div>
+                <div class="method-box">
+                    <h4>Pourquoi ?</h4>
+                    <p>Pour garantir que les objets électroniques communiquent sans perte d'information[cite: 3].</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <article class="ac-block">
-            <h3 class="ac-title"><span>AC 2.1</span> Mesure et analyse de signaux</h3>
-            <div class="explanation-grid">
-                <div class="exp-item">
+    <section class="bc-card bc-program">
+        <div class="bc-header"><h2>BC3 - Créer des outils informatiques (Programmer)</h2></div>
+        
+        <div class="ac-section">
+            <div class="ac-title"><span class="ac-badge">AC 13.02</span> Lire, exécuter et modifier un programme</div>
+            <div class="method-grid">
+                <div class="method-box">
                     <h4>Quoi ?</h4>
-                    <p>Analyse spectrale et étude des ondes de transmission.</p>
+                    <p>Compréhension de scripts d'automatisation et de logique algorithmique.</p>
                 </div>
-                <div class="exp-item">
+                <div class="method-box">
                     <h4>Comment ?</h4>
-                    <p>Mesures réelles sur des supports en cuivre et fibre optique.</p>
+                    <p>Développement de petits outils permettant de gérer des tâches répétitives sur un serveur.</p>
                 </div>
-                <div class="exp-item">
+                <div class="method-box">
                     <h4>Pourquoi ?</h4>
-                    <p>Garantir une connexion de qualité et sans interférences pour l'utilisateur final.</p>
+                    <p>Gagner en autonomie et être capable de piloter des projets sans aide extérieure constante[cite: 7, 22].</p>
                 </div>
             </div>
-        </article>
-        </section>
-
-    <section class="bc-section" style="border-top-color: #8e44ad;">
-        <div class="bc-header">
-            <h2>BC3 - Créer des outils et applications (Programmer)</h2>
         </div>
-
-        <article class="ac-block">
-            <h3 class="ac-title"><span>AC 3.1</span> Utilisation des outils informatiques</h3>
-            <div class="explanation-grid">
-                <div class="exp-item">
-                    <h4>Quoi ?</h4>
-                    <p>Installation d'environnements de développement (IDE) et gestion de versions.</p>
-                </div>
-                <div class="exp-item">
-                    <h4>Comment ?</h4>
-                    <p>Utilisation de VS Code et de Git pour sauvegarder mes projets.</p>
-                </div>
-                <div class="exp-item">
-                    <h4>Pourquoi ?</h4>
-                    <p>Pour travailler de manière organisée et collaborative sur des scripts d'administration.</p>
-                </div>
-            </div>
-        </article>
-
-        <article class="ac-block">
-            <h3 class="ac-title"><span>AC 3.2</span> Développement & Algorithmie</h3>
-            <div class="explanation-grid">
-                <div class="exp-item">
-                    <h4>Quoi ?</h4>
-                    <p>Écriture de scripts en Python ou Bash pour automatiser des tâches.</p>
-                </div>
-                <div class="exp-item">
-                    <h4>Comment ?</h4>
-                    <p>Création d'algorithmes de tri ou de gestion d'utilisateurs en ligne de commande.</p>
-                </div>
-                <div class="exp-item">
-                    <h4>Pourquoi ?</h4>
-                    <p>Un administrateur doit savoir coder pour ne pas refaire manuellement les mêmes actions.</p>
-                </div>
-            </div>
-        </article>
     </section>
 
 </div>
