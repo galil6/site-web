@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BC1 - Administrer les réseaux | Portfolio RT</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --admin-blue: #1e3a8a;
+            --admin-light: #eff6ff;
+            --admin-accent: #3b82f6;
+        }
+
+        .admin-page {
+            max-width: 1000px;
+            margin: 40px auto;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            padding: 0 20px;
+        }
+
+        .bc-title {
+            background: var(--admin-blue);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .ac-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ac-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .ac-header {
+            color: var(--admin-accent);
+            font-weight: bold;
+            font-size: 0.85rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .ac-desc {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: #374151;
+            flex-grow: 1;
+        }
+
+        .evidence-section {
+            margin-top: 40px;
+            background: var(--admin-light);
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px dashed var(--admin-accent);
+        }
+
+        .btn-download {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: var(--admin-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+<div class="admin-page">
+    <div class="bc-title">
+        <span>Bloc de Compétence 1</span>
+        <h1>Administrer les réseaux et l’Internet</h1>
+    </div>
+
+    <div class="skills-grid">
+        <article class="ac-card">
+            <span class="ac-header">AC11.01</span>
+            <p class="ac-desc">Maîtriser les lois fondamentales de l’électricité afin d’intervenir sur des équipements de réseaux et télécommunications.</p>
+        </article>
+
+        <article class="ac-card">
+            <span class="ac-header">AC11.02</span>
+            <p class="ac-desc">Comprendre l'architecture et les fondements des systèmes numériques, les principes du codage de l'information, des communications et de l'Internet.</p>
+        </article>
+
+        <article class="ac-card">
+            <span class="ac-header">AC11.03</span>
+            <p class="ac-desc">Configurer les fonctions de base du réseau local.</p>
+        </article>
+
+        <article class="ac-card">
+            <span class="ac-header">AC11.04</span>
+            <p class="ac-desc">Maîtriser les rôles et les principes fondamentaux des systèmes d’exploitation afin d’interagir avec ceux-ci pour la configuration et l'administration des réseaux et services fournis.</p>
+        </article>
+
+        <article class="ac-card">
+            <span class="ac-header">AC11.05</span>
+            <p class="ac-desc">Identifier les dysfonctionnements du réseau local et savoir les signaler.</p>
+        </article>
+
+        <article class="ac-card">
+            <span class="ac-header">AC11.06</span>
+            <p class="ac-desc">Installer un poste client, expliquer la procédure mise en place.</p>
+        </article>
+    </div>
+
+    <section class="evidence-section">
+        <h3>📂 Traces & Livrables</h3>
+        <p>Retrouvez ici les documents et comptes-rendus de TP justifiant l'acquisition de ces compétences (Format PDF recommandé).</p>
+        <a href="#" class="btn-download">Consulter le dossier BC1 (PDF)</a>
+    </section>
+</div>
+
+</body>
+</html>
