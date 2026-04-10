@@ -5,145 +5,228 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
     <title>Compétences - BUT Réseaux & Télécoms</title>
-    <style>
-    :root {
-    --primary: #2563eb;    /* Bleu moderne */
-    --secondary: #64748b;  /* Gris ardoise */
-    --accent: #3b82f6;
-    --success: #22c55e;
-    --glass: rgba(255, 255, 255, 0.9);
-    --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-}
+  <style>
+        :root {
+            --admin-color: #2980b9;
+            --connect-color: #27ae60;
+            --program-color: #8e44ad;
+            --bg-light: #f8f9fa;
+            --text-main: #2c3e50;
+        }
 
-body {
-    background: #f1f5f9; /* Fond gris très clair pour faire ressortir les cartes */
-    color: #1e293b;
-    font-family: 'Inter', sans-serif; /* Police très moderne */
-}
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
 
-/* Container principal avec animation d'entrée */
-.container {
-    max-width: 1100px;
-    margin: 50px auto;
-    animation: fadeIn 0.8s ease-out;
-}
+        .container { max-width: 1100px; margin: 0 auto; }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+        h1 { text-align: center; color: var(--text-main); margin-bottom: 40px; }
 
-/* Style de la carte BC1 */
-.bc-card {
-    background: var(--glass);
-    backdrop-filter: blur(10px); /* Effet flou derrière la carte */
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: var(--shadow);
-    overflow: hidden;
-}
+        /* Style des Blocs de Compétences */
+        .bc-card {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border-top: 8px solid;
+        }
 
-.bc-header {
-    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-    padding: 40px;
-    text-align: center;
-    color: white;
-}
+        .bc-admin { border-top-color: var(--admin-color); }
+        .bc-connect { border-top-color: var(--connect-color); }
+        .bc-program { border-top-color: var(--program-color); }
 
-.bc-header h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    letter-spacing: -0.025em;
-}
+        .bc-header { padding: 20px 30px; background: #fff; border-bottom: 1px solid #eee; }
+        .bc-header h2 { margin: 0; font-size: 1.6rem; }
 
-/* Design des AC */
-.ac-section {
-    padding: 30px;
-    border-bottom: 1px solid #e2e8f0;
-    transition: background 0.3s ease;
-}
+        /* Apprentissages Critiques (AC) */
+        .ac-section { padding: 30px; border-bottom: 1px solid #f0f0f0; }
+        .ac-section:last-child { border-bottom: none; }
 
-.ac-section:hover {
-    background: rgba(37, 99, 235, 0.02); /* Très léger bleu au survol */
-}
+        .ac-title { 
+            display: flex; 
+            align-items: center; 
+            margin-bottom: 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
 
-.ac-badge {
-    background: #dbeafe;
-    color: #1e40af;
-    padding: 6px 16px;
-    border-radius: 99px;
-    font-weight: 700;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-}
+        .ac-badge {
+            background: #eee;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-right: 15px;
+            color: #555;
+        }
 
-/* Grille Quoi/Comment/Pourquoi stylisée */
-.method-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 25px;
-}
+        /* Grille d'explication : Quoi, Comment, Pourquoi */
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
 
-.method-box {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    border: 1px solid #f1f5f9;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
+        .method-box {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #eef0f2;
+        }
 
-.method-box h4 {
-    color: var(--primary);
-    font-size: 0.75rem;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
+        .method-box h4 {
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            color: #7f8c8d;
+        }
 
-/* Galerie d'images plus propre */
+        .method-box p { margin: 0; font-size: 0.95rem; }
+
+        .evidence-link {
+            margin-top: 15px;
+            display: inline-block;
+            font-size: 0.9rem;
+            color: var(--admin-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) { .method-grid { grid-template-columns: 1fr; } }
+        /* Conteneur pour les 2 ou 3 images par AC */
 .ac-visuals {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 15px;
-    margin-top: 25px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #eee;
+}
+
+.visual-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .visual-item img {
     width: 100%;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 12px;
-    filter: grayscale(20%);
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 120px;
+    object-fit: cover; /* Garde des proportions propres */
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
 .visual-item img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.05) rotate(1deg);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    transform: scale(1.08); /* Effet de zoom au survol */
+    border-color: #3498db;
 }
 
-/* Bouton Evidence stylisé */
-.evidence-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: #1e293b;
-    color: white !important;
-    padding: 12px 24px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
+.visual-item span {
+    font-size: 0.75rem;
+    color: #7f8c8d;
+    margin-top: 8px;
+    text-align: center;
+    font-style: italic;
+}
+        /* Style de la galerie d'images */
+.ac-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+    padding: 10px;
+    background: #fdfdfd;
+    border-radius: 8px;
 }
 
-.evidence-link:hover {
-    background: var(--primary);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4);
+.gallery-item {
+    text-align: center;
 }
-</style>
+
+.gallery-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /* Recadre l'image proprement */
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Effet au survol pour un look moderne */
+.gallery-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.img-caption {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 8px;
+    font-style: italic;
+}
+        /* Style de la Modal (fond noir) */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  padding-top: 50px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0,0,0,0.9); 
+}
+
+/* Image à l'intérieur de la Modal */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 1000px;
+  border-radius: 10px;
+}
+
+/* Animation d'ouverture */
+.modal-content, #caption {  
+  animation-name: zoom;
+  animation-duration: 0.4s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)} 
+  to {transform:scale(1)}
+}
+
+/* Bouton de fermeture (X) */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+}
+    </style> 
 </head>
 <body>
 
