@@ -178,6 +178,68 @@
 
         </div>
       </div>
+      <div class="ac-container" style="margin-top: 40px; border-top: 1px solid #1a3a3a; padding-top: 30px;">
+    <h3 style="color: #00ffcc; margin-bottom: 20px;">DÉMARCHE RÉFLEXIVE : AC 2.1 - Connecter les utilisateurs et les entreprises</h3>
+    
+    <style>
+        .ac-details {
+            background: #0d1b1e;
+            border: 1px solid #142d2f;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+        .ac-details[open] {
+            border-color: #00ffcc;
+        }
+        .ac-details summary {
+            color: #00ffcc;
+            cursor: pointer;
+            font-weight: bold;
+            outline: none;
+            padding: 5px;
+        }
+        .ac-details p {
+            color: #b3d4d4;
+            margin-top: 10px;
+            padding-left: 15px;
+            line-height: 1.6;
+        }
+        .ac-details strong {
+            color: #fff;
+        }
+    </style>
+
+    <details class="ac-details">
+        <summary>🔍 Ce que j'ai fait & Pourquoi</summary>
+        <p>
+            <strong>Ce que j’ai fait :</strong> Dans le cadre des TP de Fondements Physiques (R1.07), j'ai modélisé et simulé le comportement de lignes de transmission (câbles Ethernet, paires torsadées) sur les logiciels LTspice et Matlab/Simulink. J'ai analysé les signaux en régimes continu, sinusoïdal et impulsionnel (10 MHz vs 100 MHz), mesuré l'impact de la longueur sur la bande passante (échelle décibel/Bode), et quantifié les phénomènes d'atténuation proportionnelle et de retard de propagation.
+        </p>
+        <p>
+            <strong>Pourquoi je l’ai fait :</strong> Déployer un réseau ne se limite pas à brancher des câbles ou configurer des protocoles logiques. Il est indispensable de comprendre la couche physique et les limites matérielles des supports de transmission. Cette modélisation permet d'anticiper les dégradations de signaux subies par les données sur de longues distances afin de choisir le bon type de média ou l'emplacement optimal des répéteurs en contexte professionnel.
+        </p>
+    </details>
+
+    <details class="ac-details">
+        <summary>🛠️ Comment j'ai procédé & Traces</summary>
+        <p>
+            <strong>Comment je l’ai fait (méthode, outils, ressources) :</strong> J'ai d'abord appréhendé les circuits de base (ponts diviseurs) sur LTspice avant d'intégrer le modèle RLCG complet d'un câble. Je suis ensuite passé sur Matlab/Simulink pour générer des impulsions échantillonnées (Sample-Based) afin d'observer le retard en temps réel. Pour valider mes simulations, j'ai exploité les formules théoriques de propagation, notamment la vitesse définie par la relation $v = \frac{1}{\sqrt{LC}}$.
+        </p>
+        </details>
+
+    <details class="ac-details">
+        <summary>🧠 Analyse réflexive (Difficultés, Apprentissages & Évolution)</summary>
+        <p>
+            <strong>Mes difficultés :</strong> La transition entre la théorie mathématique des lignes de transmission et la configuration concrète des blocs de simulation sur Matlab/Simulink a été assez abrupte. Au début, l'interprétation des courbes de réponse en fréquence (diagrammes de Bode) et la manipulation des échelles en décibels posaient problème pour identifier précisément la fréquence de coupure à -3 dB selon que le câble mesurait 1m ou 100m.
+        </p>
+        <p>
+            <strong>Ce que j’en ai appris :</strong> J'ai compris de manière concrète pourquoi les câbles Ethernet en cuivre ont une limite stricte de portée (généralement 100 mètres). Grâce aux simulations RLCG, j'ai visualisé l'effet "filtre passe-bas" naturel créé par la résistance et la capacité du câble, ce qui écrase les hautes fréquences et déforme les impulsions numériques indispensables aux hauts débits.
+        </p>
+        <p>
+            <strong>Ce que je ferais autrement :</strong> Si je devais refaire ces manipulations, je prendrais le temps de créer un script Matlab automatisé pour faire varier le paramètre de longueur de câble sur une plage continue, plutôt que de relancer manuellement des simulations distinctes pour chaque distance. Cela m'aurait permis de tracer une courbe d'atténuation globale beaucoup plus fluide et représentative.
+        </p>
+    </details>
+</div>
     </section>
 
   </main>
