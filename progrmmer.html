@@ -187,6 +187,68 @@
 
                 </div>
             </div>
+            <div class="ac-container" style="margin-top: 40px; border-top: 1px solid #1a3a3a; padding-top: 30px;">
+    <h3 style="color: #00ffcc; margin-bottom: 20px;">DÉMARCHE RÉFLEXIVE : AC 3.1 - Développer des outils d'automatisation et de traitement</h3>
+    
+    <style>
+        .ac-details {
+            background: #0d1b1e;
+            border: 1px solid #142d2f;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+        .ac-details[open] {
+            border-color: #00ffcc;
+        }
+        .ac-details summary {
+            color: #00ffcc;
+            cursor: pointer;
+            font-weight: bold;
+            outline: none;
+            padding: 5px;
+        }
+        .ac-details p {
+            color: #b3d4d4;
+            margin-top: 10px;
+            padding-left: 15px;
+            line-height: 1.6;
+        }
+        .ac-details strong {
+            color: #fff;
+        }
+    </style>
+
+    <details class="ac-details">
+        <summary>🔍 Ce que j'ai fait & Pourquoi</summary>
+        <p>
+            <strong>Ce que j’ai fait :</strong> J'ai conçu et développé une série de scripts utilitaires en Python (versions 3.x) axés sur l'automatisation. J'ai créé des algorithmes de base, un générateur d'adresses IPv4 aléatoires par classe (A, B, C, D, E), un outil d'extraction de données sensibles (emails, adresses MAC, numéros) via des expressions régulières, et un script d'interrogation d'API REST (wttr.in) pour récupérer des données externes.
+        </p>
+        <p>
+            <strong>Pourquoi je l’ai fait :</strong> Un bon technicien ou ingénieur réseau ne doit pas faire deux fois la même tâche manuellement. L'objectif de ces développements est d'acquérir une logique algorithmique solide pour automatiser l'analyse de fichiers de configuration, gérer dynamiquement des plans d'adressage IP volumineux, et savoir faire interagir des scripts locaux avec des services web distants pour collecter des métriques.
+        </p>
+    </details>
+
+    <details class="ac-details">
+        <summary>🛠️ Comment j'ai procédé & Traces</summary>
+        <p>
+            <strong>Comment je l’ai fait (méthode, outils, ressources) :</strong> J'ai programmé en utilisant l'écosystème natif de Python et des bibliothèques clés. Pour les outils en ligne de commande (CLI), j'ai exploité <code>argparse</code> afin de gérer proprement les arguments passés au script. Pour le parsing de chaînes, j'ai utilisé la bibliothèque <code>re</code> (Regex), et pour les requêtes HTTP, j'ai intégré la librairie externe <code>requests</code>. J'ai testé et validé mes scripts directement depuis mon terminal Linux pour simuler une exécution en production.
+        </p>
+        </details>
+
+    <details class="ac-details">
+        <summary>🧠 Analyse réflexive (Difficultés, Apprentissages & Évolution)</summary>
+        <p>
+            <strong>Mes difficultés :</strong> La principale difficulté a résidé dans la rigueur imposée par le parsing de données textuelles. Construire des expressions régulières parfaites pour attraper des adresses MAC ou des structures d'emails sans générer de faux positifs ou de faux négatifs m'a demandé beaucoup de corrections de bugs. De même, la gestion des exceptions lors de l'appel à l'API (gérer le cas où le réseau est coupé ou que l'API renvoie un code d'erreur 500) a été un défi complexe à appréhender au départ.
+        </p>
+        <p>
+            <strong>Ce que j’en ai appris :</strong> Ce parcours m'a appris à structurer mon code de manière modulaire. J'ai compris l'importance des structures de données complexes (dictionnaires, listes imbriquées) pour formater proprement le JSON renvoyé par une API. J'ai également mesuré l'immense gain de temps que représente l'automatisation : un traitement de log réseau qui prendrait des heures à la main est résolu en quelques millisecondes par un script bien pensé.
+        </p>
+        <p>
+            <strong>Ce que je ferais autrement :</strong> Avec le recul, au lieu d'écrire des scripts indépendants et monolithiques, j'adopterais dès le départ une approche orientée objet ou du moins fonctionnelle plus poussée. Je centraliserais mes fonctions de parsing et de requêtes réseau dans des modules réutilisables (packages personnels), et je mettrais en place des tests unitaires systématiques pour m'assurer qu'une modification sur mon code ne casse pas mes anciens scripts.
+        </p>
+    </details>
+</div>
         </section>
 
     </main>
