@@ -124,6 +124,68 @@
                             </p>
                         </div>
                     </div>
+                    <div class="ac-container" style="margin-top: 40px; border-top: 1px solid #1a3a3a; padding-top: 30px;">
+    <h3 style="color: #00ffcc; margin-bottom: 20px;">DÉMARCHE RÉFLEXIVE : AC 1.1 - Administrer un système informatique</h3>
+    
+    <style>
+        .ac-details {
+            background: #0d1b1e;
+            border: 1px solid #142d2f;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+        .ac-details[open] {
+            border-color: #00ffcc;
+        }
+        .ac-details summary {
+            color: #00ffcc;
+            cursor: pointer;
+            font-weight: bold;
+            outline: none;
+            padding: 5px;
+        }
+        .ac-details p {
+            color: #b3d4d4;
+            margin-top: 10px;
+            padding-left: 15px;
+            line-height: 1.6;
+        }
+        .ac-details strong {
+            color: #fff;
+        }
+    </style>
+
+    <details class="ac-details">
+        <summary>🔍 Ce que j'ai fait & Pourquoi</summary>
+        <p>
+            <strong>Ce que j’ai fait :</strong> [cite: 19] Dans le cadre des TP d'Administration Système (R1.08), j'ai configuré et pris en main un environnement d'exploitation Debian. J'ai manipulé l'arborescence Linux, géré les droits d'accès avancés (chmod octal/symbolique), et conçu des pipelines complexes en combinant des filtres (grep, sed, cut) et des expressions régulières pour extraire des données spécifiques du système (comme dans /etc/passwd).
+        </p>
+        <p>
+            <strong>Pourquoi je l’ai fait :</strong> [cite: 20] L'administration système est le cœur invisible de toute infrastructure réseau. Maîtriser l'environnement Linux et le Shell est indispensable pour automatiser la gestion des serveurs, sécuriser les accès utilisateurs et auditer efficacement les fichiers de logs sans dépendre d'une interface graphique, ce qui est la norme en entreprise.
+        </p>
+    </details>
+
+    <details class="ac-details">
+        <summary>🛠️ Comment j'ai procédé & Traces</summary>
+        <p>
+            <strong>Comment je l’ai fait (méthode, outils, ressources) :</strong> [cite: 21] J'ai travaillé directement en CLI via le terminal Bash sur une distribution Debian. Pour la méthode, j'ai procédé par étapes : d'abord la validation des commandes unitaires de recherche (find), puis l'assemblage avec des tubes (pipes |) pour le traitement des flux. J'ai utilisé l'éditeur de texte Nano pour modifier mes fichiers et le manuel Linux (man) comme ressource principale pour valider la syntaxe des options complexes.
+        </p>
+        </details>
+
+    <details class="ac-details">
+        <summary>🧠 Analyse réflexive (Difficultés, Apprentissages & Évolution)</summary>
+        <p>
+            <strong>Mes difficultés :</strong> [cite: 22] Au début, la gestion des redirections (> et 2>) et l'application stricte des droits d'accès m'ont demandé beaucoup de vigilance. Ma plus grosse frustration a été une erreur "Directory not found" sur un TP de configuration : j'ai passé un temps fou à chercher une panne complexe alors qu'il s'agissait simplement d'un slash ('/') en trop au début de mon chemin d'accès. Cela m'a montré à quel point le Shell ne pardonne aucune approximation.
+        </p>
+        <p>
+            <strong>Ce que j’en ai appris :</strong> [cite: 23] J'ai développé une vraie rigueur logique. J'ai compris que chaque outil Unix (grep, sort, uniq) est une brique simple, mais que leur combinaison logique permet de résoudre des problèmes d'automatisation massifs. J'ai aussi appris à ne plus foncer tête baissée et à analyser les messages d'erreur du terminal plutôt que de les ignorer.
+        </p>
+        <p>
+            <strong>Ce que je ferais autrement :</strong> [cite: 24] Si c'était à refaire, je documenterais mes lignes de commandes et mes expressions régulières les plus complexes dans un fichier "pense-bête" (cheat-sheet) dès le premier TP. Au lieu de perdre du temps à retrouver la syntaxe exacte de `find` ou de `sed` d'une semaine sur l'autre, j'aurais été beaucoup plus productif et autonome.
+        </p>
+    </details>
+</div>
 
                     <div class="col-lg-4">
                         <div class="sidebar" data-aos="fade-up" data-aos-delay="200">
