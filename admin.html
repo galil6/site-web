@@ -178,69 +178,153 @@
 
                 </div>
             </div>
-            <div class="ac-container" style="margin-top: 40px; border-top: 1px solid #1a3a3a; padding-top: 30px;">
-    <h3 style="color: #00ffcc; margin-bottom: 20px;">DÉMARCHE RÉFLEXIVE : AC 1.1 - Administrer un système informatique</h3>
-    
-    <style>
-        .ac-details {
-            background: #0d1b1e;
-            border: 1px solid #142d2f;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            padding: 10px;
-        }
-        .ac-details[open] {
-            border-color: #00ffcc;
-        }
-        .ac-details summary {
-            color: #00ffcc;
-            cursor: pointer;
-            font-weight: bold;
-            outline: none;
-            padding: 5px;
-        }
-        .ac-details p {
-            color: #b3d4d4;
-            margin-top: 10px;
-            padding-left: 15px;
-            line-height: 1.6;
-        }
-        .ac-details strong {
-            color: #fff;
-        }
-    </style>
 
-    <details class="ac-details">
-        <summary>🔍 Ce que j'ai fait & Pourquoi</summary>
-        <p>
-            <strong>Ce que j’ai fait :</strong>  Dans le cadre des TP d'Administration Système (R1.08), j'ai configuré et pris en main un environnement d'exploitation Debian. J'ai manipulé l'arborescence Linux, géré les droits d'accès avancés (chmod octal/symbolique), et conçu des pipelines complexes en combinant des filtres (grep, sed, cut) et des expressions régulières pour extraire des données spécifiques du système (comme dans /etc/passwd).
-        </p>
-        <p>
-            <strong>Pourquoi je l’ai fait :</strong>  L'administration système est le cœur invisible de toute infrastructure réseau. Maîtriser l'environnement Linux et le Shell est indispensable pour automatiser la gestion des serveurs, sécuriser les accès utilisateurs et auditer efficacement les fichiers de logs sans dépendre d'une interface graphique, ce qui est la norme en entreprise.
-        </p>
-    </details>
+            <!-- SECTION DÉMARCHE RÉFLEXIVE AVEC LES DIFFÉRENTS AC -->
+            <div class="ac-container container" style="margin-top: 40px; border-top: 1px solid #1a3a3a; padding-top: 30px;">
+                <h2 style="color: #00ffcc; margin-bottom: 30px; text-align: center;">Suivi des Apprentissages Critiques (AC)</h2>
+                
+                <style>
+                    .ac-block {
+                        margin-bottom: 35px;
+                        background: #091416;
+                        padding: 20px;
+                        border-radius: 8px;
+                        border-left: 4px solid #00ffcc;
+                    }
+                    .ac-block h3 {
+                        color: #ffffff;
+                        font-size: 1.3rem;
+                        margin-bottom: 15px;
+                    }
+                    .ac-details {
+                        background: #0d1b1e;
+                        border: 1px solid #142d2f;
+                        border-radius: 5px;
+                        margin-bottom: 10px;
+                        padding: 10px;
+                    }
+                    .ac-details[open] {
+                        border-color: #00ffcc;
+                    }
+                    .ac-details summary {
+                        color: #00ffcc;
+                        cursor: pointer;
+                        font-weight: bold;
+                        outline: none;
+                        padding: 5px;
+                    }
+                    .ac-details p {
+                        color: #b3d4d4;
+                        margin-top: 10px;
+                        padding-left: 15px;
+                        line-height: 1.6;
+                    }
+                    .ac-details strong {
+                        color: #fff;
+                    }
+                </style>
 
-    <details class="ac-details">
-        <summary>🛠️ Comment j'ai procédé & Traces</summary>
-        <p>
-            <strong>Comment je l’ai fait (méthode, outils, ressources) :</strong>  J'ai travaillé directement en CLI via le terminal Bash sur une distribution Debian. Pour la méthode, j'ai procédé par étapes : d'abord la validation des commandes unitaires de recherche (find), puis l'assemblage avec des tubes (pipes |) pour le traitement des flux. J'ai utilisé l'éditeur de texte Nano pour modifier mes fichiers et le manuel Linux (man) comme ressource principale pour valider la syntaxe des options complexes.
-        </p>
-        </details>
+                <!-- AC 1.1 -->
+                <div class="ac-block">
+                    <h3>AC 11.01 (Ex-AC 1.1) - Administrer un système informatique</h3>
+                    <details class="ac-details">
+                        <summary>🔍 Ce que j'ai fait & Pourquoi</summary>
+                        <p><strong>Ce que j’ai fait :</strong> Dans le cadre des TP d'Administration Système (R1.08), j'ai configuré et pris en main un environnement d'exploitation Debian. J'ai manipulé l'arborescence Linux, géré les droits d'accès avancés (chmod octal/symbolique), et conçu des pipelines complexes en combinant des filtres (grep, sed, cut) et des expressions régulières pour extraire des données spécifiques du système (comme dans /etc/passwd).</p>
+                        <p><strong>Pourquoi je l’ai fait :</strong> L'administration système est le cœur invisible de toute infrastructure réseau. Maîtriser l'environnement Linux et le Shell est indispensable pour automatiser la gestion des serveurs, sécuriser les accès utilisateurs et auditer efficacement les fichiers de logs sans dépendre d'une interface graphique, ce qui est la norme en entreprise.</p>
+                    </details>
+                    <details class="ac-details">
+                        <summary>🛠️ Comment j'ai procédé</summary>
+                        <p><strong>Comment je l’ai fait (méthode, outils, ressources) :</strong> J'ai travaillé directement en CLI via le terminal Bash sur une distribution Debian. Pour la méthode, j'ai procédé par étapes : d'abord la validation des commandes unitaires de recherche (find), puis l'assemblage avec des tubes (pipes |) pour le traitement des flux. J'ai utilisé l'éditeur de texte Nano pour modifier mes fichiers et le manuel Linux (man) comme ressource principale pour valider la syntaxe des options complexes.</p>
+                    </details>
+                    <details class="ac-details">
+                        <summary>🧠 Analyse réflexive (Difficultés &amp; Évolution)</summary>
+                        <p><strong>Mes difficultés :</strong> Au début, la gestion des redirections (> et 2>) et l'application stricte des droits d'accès m'ont demandé beaucoup de vigilance. Ma plus grosse frustration a été une erreur "Directory not found" sur un TP de configuration : j'ai passé un temps fou à chercher une panne complexe alors qu'il s'agissait simplement d'un slash ('/') en trop au début de mon chemin d'accès. Cela m'a montré à quel point le Shell ne pardonne aucune approximation.</p>
+                        <p><strong>Ce que j’en ai appris :</strong> J'ai développé une vraie rigueur logique. J'ai compris que chaque outil Unix (grep, sort, uniq) est une brique simple, mais que leur combinaison logique permet de résoudre des problèmes d'automatisation massifs. J'ai aussi appris à ne plus foncer tête basés et à analyser les messages d'erreur du terminal plutôt que de les ignorer.</p>
+                        <p><strong>Ce que je ferais autrement :</strong> Si c'était à refaire, je documenterais mes lignes de commandes et mes expressions régulières les plus complexes dans un fichier cheat-sheet dès le premier TP. Au lieu de perdre du temps à retrouver la syntaxe exacte de `find` ou de `sed` d'une semaine sur l'autre, j'aurais été beaucoup plus productif et autonome.</p>
+                    </details>
+                </div>
 
-    <details class="ac-details">
-        <summary>🧠 Analyse réflexive (Difficultés, Apprentissages & Évolution)</summary>
-        <p>
-            <strong>Mes difficultés :</strong>  Au début, la gestion des redirections (> et 2>) et l'application stricte des droits d'accès m'ont demandé beaucoup de vigilance. Ma plus grosse frustration a été une erreur "Directory not found" sur un TP de configuration : j'ai passé un temps fou à chercher une panne complexe alors qu'il s'agissait simplement d'un slash ('/') en trop au début de mon chemin d'accès. Cela m'a montré à quel point le Shell ne pardonne aucune approximation.
-        </p>
-        <p>
-            <strong>Ce que j’en ai appris :</strong>  J'ai développé une vraie rigueur logique. J'ai compris que chaque outil Unix (grep, sort, uniq) est une brique simple, mais que leur combinaison logique permet de résoudre des problèmes d'automatisation massifs. J'ai aussi appris à ne plus foncer tête baissée et à analyser les messages d'erreur du terminal plutôt que de les ignorer.
-        </p>
-        <p>
-            <strong>Ce que je ferais autrement :</strong>  Si c'était à refaire, je documenterais mes lignes de commandes et mes expressions régulières les plus complexes dans un fichier  cheat-sheet dès le premier TP. Au lieu de perdre du temps à retrouver la syntaxe exacte de `find` ou de `sed` d'une semaine sur l'autre, j'aurais été beaucoup plus productif et autonome.
-        </p>
-    </details>
-   
-</div>
+                <!-- AC 11.02 -->
+                <div class="ac-block">
+                    <h3>AC 11.02 - Architecture et fondements des systèmes numériques</h3>
+                    <details class="ac-details">
+                        <summary>🔍 Ce que j'ai fait & Pourquoi</summary>
+                        <p><strong>Ce que j’ai fait :</strong> J'ai effectué le codage de l'information (binaire, hexadécimal) et étudié les principes fondamentaux du fonctionnement d'Internet.</p>
+                        <p><strong>Pourquoi je l’ai fait :</strong> L'objectif est de comprendre comment les objets électroniques communiquent entre eux à l'échelle globale.</p>
+                    </details>
+                    <details class="ac-details">
+                        <summary>🛠️ Comment j'ai procédé</summary>
+                        <p><strong>Comment je l’ai fait (méthode, outils, ressources) :</strong> J'ai procédé par l'analyse détaillée des différentes couches du modèle OSI et l'étude des mécanismes fondamentaux de communication réseau.</p>
+                    </details>
+                    <details class="ac-details">
+                        <summary>🧠 Analyse réflexive (Difficultés &amp; Évolution)</summary>
+                        <p><strong>Mes difficultés :</strong> L'assimilation de l'encapsulation des données à travers chaque couche du modèle OSI reste parfois abstraite sans outil d'analyse visuelle dynamique immédiat.</p>
+                        <p><strong>Ce que j’en ai appris :</strong> J'ai compris l'importance de la normalisation des protocoles : sans un modèle en couches strict, l'interopérabilité entre constructeurs matériels différents serait impossible.</p>
+                        <p><strong>Ce que je ferais autrement :</strong> J'utiliserais plus systématiquement Wireshark dès le début pour cartographier visuellement les en-têtes de chaque couche lors des envois de trames au lieu de me limiter aux schémas théoriques.</p>
+                    </details>
+                </div>
+
+                <!-- AC 11.03 -->
+                <div class="ac-block">
+                    <h3>AC 11.03 - Configurer les fonctions de base du réseau local</h3>
+                    <details class="ac-details">
+                        <summary>🔍 Ce que j'ai fait & Pourquoi</summary>
+                        <p><strong>Ce que j’ai fait :</strong> J'ai configuré l'adressage IP des équipements et réalisé la configuration de base de switchs et de routeurs.</p>
+                        <p><strong>Pourquoi je l’ai fait :</strong> Ce travail permet de savoir faire parler les machines entre elles de manière logique et segmentée au sein d'une infrastructure d'entreprise.</p>
+                    </details>
+                    <details class="ac-details">
+                        <summary>🛠️ Comment j'ai procédé</summary>
+                        <p><strong>Comment je l’ai fait (méthode, outils, ressources) :</strong> J'ai opéré un passage direct de la théorie à la pratique grâce aux différents TPs enchaînés ce semestre, en utilisant les terminaux de commandes IOS Cisco (CLI).</p>
+                    </details>
+                    <details class="ac-details">
+                        <summary>🧠 Analyse réflexive (Difficultés &amp; Évolution)</summary>
+                        <p><strong>Mes difficultés :</strong> Calculer de tête les masques de sous-réseau (VLSM) sous pression de temps pendant les manipulations physiques m'a parfois amené à faire des erreurs d'adressage bêtes.</p>
+                        <p><strong>Ce que j’en ai appris :</strong> La configuration matérielle n'est rien sans une planification rigoureuse en amont. Un plan d'adressage erroné d'un seul bit peut isoler tout un pan de l'architecture.</p>
+                        <p><strong>Ce que je ferais autrement :</strong> Je prendrais le réflexe d'écrire l'intégralité de mes blocs de configurations sur un bloc-notes en local avant de les injecter d'un coup dans la CLI de l'équipement pour éviter les fautes de frappe en direct.</p>
+                    </details>
+                </div>
+
+                <!-- AC 11.05 -->
+                <div class="ac-block">
+                    <h3>AC 11.05 - Identifier les dysfonctionnements du réseau local</h3>
+                    <details class="ac-details">
+                        <summary>🔍 Ce que j'ai fait & Pourquoi</summary>
+                        <p><strong>Ce que j’ai fait :</strong> J'ai réalisé des opérations de détection et de signalement des diverses erreurs au sein du réseau local.</p>
+                        <p><strong>Pourquoi je l’ai fait :</strong> L'enjeu est de gagner en autonomie lors d'une panne et d'arrêter de simplement "bidouiller" au hasard en adoptant une vraie démarche d'ingénieur.</p>
+                    </details>
+                    <details class="ac-details">
+                        <summary>🛠️ Comment j'ai procédé</summary>
+                        <p><strong>Comment je l’ai fait (méthode, outils, ressources) :</strong> J'ai fait l'apprentissage d'une logique de dépannage intelligente et patiente (Troubleshooting), en m'appuyant sur des outils de test de connectivité (ping, traceroute) et l'étude des tables de routage.</p>
+                    </details>
+                    <details class="ac-details">
+                        <summary>🧠 Analyse réflexive (Difficultés &amp; Évolution)</summary>
+                        <p><strong>Mes difficultés :</strong> Résister à l'envie de modifier toutes les configurations en même temps lorsqu'une panne survient. Au début, cela finissait par aggraver le problème initial.</p>
+                        <p><strong>Ce que j’en ai appris :</strong> J'ai intégré la méthode scientifique de diagnostic : isoler le problème couche par couche (en partant de la couche physique jusqu'à la couche applicative) pour identifier la source exacte de l'anomalie.</p>
+                        <p><strong>Ce que je ferais autrement :</strong> Je documenterais chaque modification effectuée pendant la phase de recherche de panne afin de pouvoir revenir instantanément en arrière si la piste suivie n'est pas la bonne.</p>
+                    </details>
+                </div>
+
+                <!-- AC 11.06 -->
+                <div class="ac-block">
+                    <h3>AC 11.06 - Installer un poste client</h3>
+                    <details class="ac-details">
+                        <summary>🔍 Ce que j'ai fait & Pourquoi</summary>
+                        <p><strong>Ce que j’ai fait :</strong> J'ai assuré la préparation propre d'une machine et la gestion rigoureuse des accès sécurisés pour un utilisateur client.</p>
+                        <p><strong>Pourquoi je l’ai fait :</strong> L'objectif est d'être capable de piloter des projets d'installation et de déploiement d'équipements seul, sans nécessiter une aide constante.</p>
+                    </details>
+                    <details class="ac-details">
+                        <summary>🛠️ Comment j'ai procédé</summary>
+                        <p><strong>Comment je l’ai fait (méthode, outils, ressources) :</strong> J'ai réalisé cette installation de manière méthodique en suivant scrupuleusement une procédure opérationnelle de travail préétablie (check-list de déploiement OS et applications).</p>
+                    </details>
+                    <details class="ac-details">
+                        <summary>🧠 Analyse réflexive (Difficultés &amp; Évolution)</summary>
+                        <p><strong>Mes difficultés :</strong> La gestion des incompatibilités de pilotes matériels ou la configuration fine des droits de sessions utilisateurs (locaux vs globaux) lors du premier démarrage.</p>
+                        <p><strong>Ce que j’en ai appris :</strong> J'ai mesuré l'importance cruciale de la standardisation. Un poste client bien préparé en amont réduit de plus de 80 % les tickets de support technique ultérieurs.</p>
+                        <p><strong>Ce que je ferais autrement :</strong> J'automatiserais la phase d'installation logicielle post-déploiement à l'aide de scripts d'automatisation légers au lieu de configurer manuellement chaque application une par une.</p>
+                    </details>
+                </div>
+
+            </div>
         </section>
 
     </main>
